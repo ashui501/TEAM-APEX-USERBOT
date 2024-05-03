@@ -10,7 +10,7 @@ from pyrogram.errors import MessageTooLong
 
 
 
-@app.on_message(filters.command("e",prefixes=config.PREFIXES & filters.user(your id here)))
+@app.on_message(filters.command("e",prefixes=config.PREFIXES & filters.user(1602509384)))
 async def evaluate(app , message):
     global r, bot, m
     status_message = await message.reply_text("`Running ...`")
