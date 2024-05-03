@@ -105,7 +105,7 @@ async def alive_inline(_, inline_query):
                 title="🤖 Bot Status",
                 caption=ALIVE_TEXT,  # Use caption for text content
                 photo_url=photo_url,
-                thumb_url=""https://telegra.ph/file/238e0440a67c12acb3488.jpg”,
+                thumb_url=""https://telegra.ph/file/238e0440a67c12acb3488.jpg"",
                 reply_markup=buttons,
             )
         ]
