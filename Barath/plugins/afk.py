@@ -70,7 +70,7 @@ async def afk_mentioned(_, message):
 @barath.on_message(filters.create(user_afk) & filters.outgoing)
 async def auto_unafk(_, message):
     await Zect.set_unafk()
-    unafk_message = await barath.send_message(message.chat.id, "**I'm no longer AFK**")
+    unafk_message = await barath.send_message(message.chat.id, "**WELCOME BACK BY LOVELY**")
     global MENTIONED
     text = "**Total {} mentioned you**\n".format(len(MENTIONED))
     for x in MENTIONED:
