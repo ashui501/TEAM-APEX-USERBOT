@@ -48,7 +48,7 @@ async def help_cmds(client, message):
             InlineQueryResultArticle(
                 "🆘 HELP COMMANDS",
                 InputTextMessageContent(message_text="[`HELP COMMANDS`]"),
-                thumb_url="https://graph.org/file/b136511bda43b1d8db7d2.jpg",
+                thumb_url="https://telegra.ph/file/1bc66a684bbf98b338db8.jpg",
                 reply_markup=inline_keyboard
             )
         ]
