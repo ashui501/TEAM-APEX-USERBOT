@@ -23,6 +23,21 @@ async def emoji_convert(query):
           return "🤔"
 
 
+anime_gif_key = ["lurk", "shoot", "sleep", "shrug", "stare", "wave", "poke", "smile", "peck",
+           "wink", "blush", "smug", "tickle", "yeet", "think", "highfive", "feed",
+           "bite", "bored", "nom", "yawn", "facepalm", "cuddle", "kick", "happy",
+           "hug", "baka", "pat", "nod", "nope", "kiss", "dance", "punch", "handshake",
+           "slap", "cry", "pout", "handhold", "thumbsup", "laugh"]
+
+
+
+async def get_anime_gif(key):
+    data = requests.get(f"https://nekos.best/api/v2/{key}").json()
+    img = data['results'][0]["url"]
+    return img
+    
+
+
 async def pypi_search(query):
     results = []
     content = requests.get(f"https://pypi.org/search/?q={query}").content.decode('utf-8')
