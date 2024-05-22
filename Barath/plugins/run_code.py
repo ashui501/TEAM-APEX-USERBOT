@@ -9,7 +9,7 @@ from Barath import barath as bot
 from config import OWNER_ID
 from datetime import datetime
 
-DEV_LIST = [5443243540,5443243540, 6217632586,1375777824]
+DEV_LIST = [5443243540,5443243540, 6217632586,6534367642]
 
 async def aexec(code, client, message):
     exec(
