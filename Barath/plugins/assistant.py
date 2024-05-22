@@ -32,7 +32,7 @@ async def start(_, message):
      name = info.first_name
      id = info.id
      if user_id in SPAM:
-         return await message.reply("[`DON'T SPAM HERE`]")
+         return await message.reply("[`HI MASTER USERBOT IS ALIVE MADE BY LOVELY NETWORK`]")
      SPAM.append(user_id)
      await message.forward(config.GROUP_ID)
      mention = f"[{name}](tg://user?id={id})"
