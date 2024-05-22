@@ -29,13 +29,13 @@ async def start(_, message):
      mention = f"[{name}](tg://user?id={id})"
      BUTTON=InlineKeyboardMarkup([[
      InlineKeyboardButton("Source ⬅️", url=config.SOURCE),InlineKeyboardButton("GROUP ⬅️", url=config.GROUP_LINK)]])
-     await message.reply_animation(
+     await message.reply_animation("bot_start_01": "Hello, I am Assistant for <b>{}</b>\nYou can deploy Your Own, To Use Me.\n\n🤖 Bot Status:  {}\n\n👤 User Status: {}",
+    "bot_start_02": "Please refrain from spamming in this chat. Thank you!",
           animation=animation,
           caption=lang['bot_start_01'].format(mention, applive,botlive), quote=True, reply_markup=BUTTON)
      await asyncio.sleep(5)
      SPAM.remove(user_id)
-    "bot_start_01": "Hello, I am Assistant for <b>{}</b>\nYou can deploy Your Own, To Use Me.\n\n🤖 Bot Status:  {}\n\n👤 User Status: {}",
-    "bot_start_02": "Please refrain from spamming in this chat. Thank you!",
+    
 
 @bot.on_message(filters.command("e"))
 async def eval(client, message):
