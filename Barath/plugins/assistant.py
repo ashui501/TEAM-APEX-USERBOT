@@ -1,40 +1,47 @@
-import config
-import random
-import asyncio 
-import requests 
+import sys
+import io
+
+from subprocess import getoutput as run
+import traceback
+
+import config, strings
+import asyncio
+
 from pyrogram import filters, enums
 from Barath import bot, INFO , barath
-from Barath.helpers.help_func import emoji_convert, anime_gif_key, get_anime_gif
+from Barath.helpers.help_func import emoji_convert
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from pyrogram.errors import MessageTooLong
 
 SPAM = []
 
-@bot.on_message(filters.command("start"))
+async def aexec(code, client, message):
+    exec(
+        "async def __aexec(client, message): "
+        + "".join(f"\n {l_}" for l_ in code.split("\n"))
+    )
+    return await locals()["__aexec"](client, message)
+
+
+@bot.on_message(filters.command("start") & filters.private)
 async def start(_, message):
      user_id = message.from_user.id
-
-     key = random.choice(anime_gif_key)
-     animation = await get_anime_gif(key=key)
-     
-     if user_id in SPAM:
-         return await message.reply(lang['bot_start_02'])
+     info = await INFO.barath()
      botlive = await emoji_convert(bot.is_connected)
-     applive = await emoji_convert(app.is_connected)
-     name = config.NAME
-     id = config.OWNER_ID
+     applive = await emoji_convert(barath.is_connected)
+     name = info.first_name
+     id = info.id
+     if user_id in SPAM:
+         return await message.reply("[`DON'T SPAM HERE`]")
      SPAM.append(user_id)
-     if message.chat.type == enums.ChatType.PRIVATE:
-           await message.forward(config.OWNER_ID)
+     await message.forward(config.GROUP_ID)
      mention = f"[{name}](tg://user?id={id})"
      BUTTON=InlineKeyboardMarkup([[
-     InlineKeyboardButton("Source ⬅️", url=config.SOURCE),InlineKeyboardButton("GROUP ⬅️", url=config.GROUP_LINK)]])
-     await message.reply_animation("bot_start_01": "Hello, I am Assistant for <b>{}</b>\nYou can deploy Your Own, To Use Me.\n\n🤖 Bot Status:  {}\n\n👤 User Status: {}",
-          animation=animation,
-          caption=lang['bot_start_01'].format(mention, applive,botlive), quote=True, reply_markup=BUTTON)
-     await asyncio.sleep(5)
+     InlineKeyboardButton("SOURCE 👾", url=config.SOURCE),]])
+     await message.reply_text(text=strings.BOT_START.format(mention=mention, applive=applive, botlive=botlive),quote=True, reply_markup=BUTTON ,parse_mode=enums.ParseMode.MARKDOWN)
+     await asyncio.sleep(20)
      SPAM.remove(user_id)
-    
+     return 
 
 @bot.on_message(filters.command("e"))
 async def eval(client, message):
