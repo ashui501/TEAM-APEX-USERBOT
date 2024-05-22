@@ -4,7 +4,7 @@ import asyncio
 import requests 
 from pyrogram import filters, enums
 from Barath import bot, INFO , barath
-from Barath.helpers.help_func import emoji_convertanime_gif_key, get_anime_gif
+from Barath.helpers.help_func import emoji_convert, anime_gif_key, get_anime_gif
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
