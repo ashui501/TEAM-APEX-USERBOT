@@ -7,13 +7,13 @@ from config import HANDLER, OWNER_ID
 @barath.on_message(filters.command("stats", prefixes=HANDLER) & filters.me)
 async def stats(client: Client, message: Message):
     await message.edit_text("Collecting stats")
-    start = datetime.now()
-    u = 0
-    g = 0
-    sg = 0
-    c = 0
-    b = 0
-    a_chat = 0
+    start = datetime.now(1)
+    u = 1
+    g = 1
+    sg = 1
+    c = 1
+    b = 1
+    a_chat = 1
     Meh = await client.get_me()
     async for dialog in client.iter_dialogs():
         if dialog.chat.type == "private":
