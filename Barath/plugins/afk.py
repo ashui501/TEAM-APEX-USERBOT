@@ -26,7 +26,7 @@ async def afk(barath, message):
     else:
         reason = arg
     await Zect.set_afk(True, afk_time, reason)
-    await message.edit("**I'm goin' AFK**")
+    await message.edit("**@ISHIKKI_AKIRA SENSEI IS' AFK**")
 
 
 @barath.on_message(filters.mentioned & ~filters.bot & filters.create(user_afk), group=11)
@@ -47,7 +47,7 @@ async def afk_mentioned(_, message):
         f"**I'm AFK right now (since {afk_since})\nReason:** __{reason}__"
         )
     else:
-        await message.reply(f"**I'm AFK right now (since {afk_since})**")
+        await message.reply(f"**SENSEI IS AFK RIGHT NOW(since {afk_since})**")
 
         _, message_type = get_message_type(message)
         if message_type == Types.TEXT:
