@@ -3,7 +3,7 @@ from pyrogram import filters
 from Barath import barath, MODULE
 from config import HANDLER,  OWNER_ID
 
-@barath.on_message(filters.command("tm", prefixes=HANDLER) & filters.me)
+@barath.on_message(filters.command("t", prefixes=HANDLER) & filters.me)
 async def tm(_, message):
     await message.edit('processing...')
     reply_is = message.reply_to_message
