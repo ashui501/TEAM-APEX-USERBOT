@@ -86,7 +86,7 @@ async def weather(_, m: Message):
         return await m.reply_text(
             "<b>ᴜsᴀɢᴇ:</b> <code>/weather location ᴏʀ city</code> - ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴛʜᴇ ᴡᴇᴀᴛʜᴇʀ ɪɴ <i>ʟᴏᴄᴀᴛɪᴏɴ ᴏʀ ᴄɪᴛʏ</i>"
         )
-    msg = await m.reply_text("Getting Weather info...")
+    msg = await m.reply_text("Getting Weather info master...")
 
     r = await http.get(
         get_coords,
@@ -182,10 +182,10 @@ async def spacebin(text: str):
 """
     return string
 
-@barath.on_message(filters.command("paste", HANDLER) & filters.me)
+@barath.on_message(filters.command("p", HANDLER) & filters.me)
 async def paste(_, message):
     # share your codes on https://spacebin.in
-    msg = await message.reply_text("Trying...")  # Added await here
+    msg = await message.reply_text("Trying master...")  # Added await here
     if not message.reply_to_message:
         try:
             text = message.text.split(None, 1)[1]
