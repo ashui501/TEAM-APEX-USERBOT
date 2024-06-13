@@ -8,13 +8,13 @@ async def tm(_, message):
     await message.edit('processing...')
     reply_is = message.reply_to_message
     if not reply_is:
-         return await message.edit_text("💔 Reply To The Media!")
+         return await message.edit_text("💔 Reply To The Media master!")
     types = [True if reply_is.document else True if reply_is.photo else True if reply_is.animation else False][0]
     if types:
         path = await message.reply_to_message.download()
         grap = upload_file(path)
         for code in grap:
-              url = "https://graph.org"+code
+              url = "https://graph.org"+code 
         return await message.edit(str(url))
         
 __mod_name__ = "TGM"  
