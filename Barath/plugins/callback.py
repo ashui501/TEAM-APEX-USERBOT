@@ -11,10 +11,10 @@ InlineKeyboardMarkup, InlineKeyboardButton )
 async def help_back(_, query):
    user_id = (await GET_INFO.barath()).id
    if not query.from_user.id == int(user_id):
-       return await query.answer("😤 You aren't my master")
+       return await query.answer("😤 You aren't my master baka")
    buttons = [[InlineKeyboardButton(x['module'], callback_data=f"help:{x['module']}")] for x in MODULE]
    return await bot.edit_inline_text(
-       inline_message_id=query.inline_message_id, text="[`HELP COMMANDS`]", reply_markup=InlineKeyboardMarkup(buttons), parse_mode=enums.ParseMode.MARKDOWN)
+       inline_message_id=query.inline_message_id, text="[`COMMANDS OF AKIRA USERBOT`]", reply_markup=InlineKeyboardMarkup(buttons), parse_mode=enums.ParseMode.MARKDOWN)
        
      
 
