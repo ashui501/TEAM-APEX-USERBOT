@@ -7,8 +7,8 @@ from Barath import barath
 @barath.on_message(filters.me & filters.command("write",prefixes=config.HANDLER))
 async def handwriting(_, message):
     if len(message.command) < 2:
-        return await message.reply_text("» Give some text to write...")
-    m = await message.reply_text("» I writing please wait...")
+        return await message.reply_text("» Give some text to write master...")
+    m = await message.reply_text("» I writing please wait master...")
     name = (
         message.text.split(None, 1)[1]
         if len(message.command) < 3
