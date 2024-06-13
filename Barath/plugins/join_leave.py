@@ -21,17 +21,17 @@ async def joinchat(client, message):
     except:
         user.first_name = f"{ASS_USERNAME}"
     # await msg.delete()
-    msg = await message.reply_text(f"Trying to Join Group {username}")
+    msg = await message.reply_text(f"Trying to Join Group master {username}")
     await asyncio.sleep(1)
 
     try: 
         await barath.join_chat(f"@{username}")
-        await msg.edit(f"✅ Successfully joined @{username} group!")
+        await msg.edit(f"✅ Successfully joined @{username} group master!")
     except UserAlreadyParticipant:
-        await msg.edit(f"🔴 {user.first_name} is already in this group!")
+        await msg.edit(f"🔴 {user.first_name} is already in this group master!")
     except Exception as e:
         print(f"Error joining group: {e}")
-        await msg.edit(f"❌ An error occurred while trying to join the group. Please try again later.")
+        await msg.edit(f"❌ An error occurred while trying to join the group. Please try again later master.")
 
 
 
@@ -44,13 +44,13 @@ async def rem(client, message):
                 group_id,
                 "Leaving Chat",
             )
-            msg = message.reply_text("Leaving chat in 2 sec...")
+            msg = message.reply_text("Leaving chat in 2 sec master...")
             await message.delete()
             await asyncio.sleep(2)
-            await msg.edit("Chat Left Successfully")
+            await msg.edit("Chat Left Successfully master")
             await barath.leave_chat(group_id)
         else:
-            msg = await  message.reply_text("Leaving current chat in 2 Sec..")
+            msg = await  message.reply_text("Leaving current chat in 2 Sec master..")
             await message.delete()
             await asyncio.sleep(2)
             await msg.edit("Chat Left")
