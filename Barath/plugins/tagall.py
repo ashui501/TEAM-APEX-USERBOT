@@ -68,6 +68,7 @@ add_command_help(
         [
             "cancel",
             f"to stop .tagall",
+        ],
 
             
 __mod_name__ = "STATUS"  
