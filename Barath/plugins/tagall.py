@@ -57,19 +57,6 @@ async def cancel_spam(client: Client, message: Message):
             pass
         return await message.edit("**Cancelled.**")
 
-
-add_command_help(
-    "tagall",
-    [
-        [
-            "tagall [text/reply ke chat]",
-            "Tag all the members one by one",
-        ],
-        [
-            "cancel",
-            f"to stop .tagall",
-        ],
-
             
 __mod_name__ = "STATUS"  
     
