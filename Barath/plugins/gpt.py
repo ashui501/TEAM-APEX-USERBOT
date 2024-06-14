@@ -1,9 +1,9 @@
 import requests
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from Sophia.__main__ import Sophia as app
+from Barath.__main__ import Sophia as app
 from config import OWNER_ID
-from Sophia import HANDLER
+from Barath import HANDLER
 
 
 def fetch_data(query: str, message: str) -> tuple:
