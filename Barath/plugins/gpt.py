@@ -1,7 +1,7 @@
 import requests
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from Barath.__main__ import Barath as app
+from Barath.__main__ import barath as app
 from config import OWNER_ID
 from Barath import HANDLER
 
