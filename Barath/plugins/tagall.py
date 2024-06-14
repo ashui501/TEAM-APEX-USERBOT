@@ -66,5 +66,5 @@ __help__ = """
 """  
 
 
-string = {"module": __mod_name__, "help": __help__}   
+string = {"module": "tagall", "help": __help__}   
 MODULE.append(string)
