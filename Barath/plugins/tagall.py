@@ -64,7 +64,3 @@ __help__ = """
 - tag: to tagall
 - cancel: to cancel tagall
 """  
-
-
-string = {"module": __mod_name__, "help": __help__}   
-MODULE.append(string)
