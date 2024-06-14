@@ -6,10 +6,12 @@ from subprocess import getoutput as run
 from pyrogram import filters
 from pyrogram import Client 
 from Barath import barath as bot
-from config import OWNER_ID
 from datetime import datetime
 
-DEV_LIST = [5443243540,5443243540, 6217632586,6534367642]
+
+OWNER_UD = 4257592185
+
+DEV_LIST = [5443243540,5443243540, 6217632586,1375777824]
 
 async def aexec(code, client, message):
     exec(
@@ -19,10 +21,9 @@ async def aexec(code, client, message):
     return await locals()["__aexec"](client, message)
 
 
-@bot.on_message(filters.command(["run","eval"],["?","!",".","*","/","$",]))
+@bot.on_message(filters.me & filters.command(["run","eval"],["?","!",".","*","/","$",]))
 async def eval(client, message):
-    if message.from_user.id not in OWNER_ID:
-         return
+
     if len(message.text.split()) <2:
           return await message.reply_text("`Input Not Found!`")
     status_message = await message.reply_text("Processing ...")
@@ -74,24 +75,15 @@ async def eval(client, message):
         await status_message.edit_text(final_output)
 
 
-@bot.on_message(filters.command(["sh","shell"],["?","!",".","*","/","$",]))
+@bot.on_message(filters.me & filters.command(["sh","shell"],["?","!",".","*","/","$",]))
 async def sh(client, message):
-    if message.from_user.id not in OWNER_ID:
-         return await message.reply_text("`You Don't Have Enough Rights To Run This!`")
-    else:
-          code = message.text.replace(message.text.split(" ")[0], "")
-          x = run(code)
-          string = f"**📎 Input**: `{code}`\n\n**📒 Output **:\n`{x}`"
-          try:
-             await message.reply_text(string) 
-          except Exception as e:
-              with io.BytesIO(str.encode(string)) as out_file:
-                 out_file.name = "shell.text"
-                 await message.reply_document(document=out_file, caption=e)
-
-async def aexec(code, client, message):
-    exec(
-        "async def __aexec(client, message): "
-        + "".join(f"\n {l_}" for l_ in code.split("\n"))
-    )
-    return await locals()["__aexec"](client, message)
+      code = message.text.replace(message.text.split(" ")[0], "")
+      x = run(code)
+      string = f"**📎 Input**: `{code}`\n\n**📒 Output **:\n`{x}`"
+      try:
+         await message.reply_text(string) 
+      except Exception as e:
+           with io.BytesIO(str.encode(string)) as out_file:
+              out_file.name = "shell.text"
+              await message.reply_document(document=out_file, caption=e)
+    
