@@ -22,7 +22,7 @@ async def _autopic(_, delay):
 
     while bool(__XOR):
         await asyncio.sleep(delay)
-        original = "cache/autopic-template.jpg"
+        original = "cache/profile.jpg"
         photo = "pic.png"
         copyfile(original, photo)
         current_time = datetime.now().strftime(
@@ -47,7 +47,7 @@ async def _autopic(_, delay):
 
 
 @Client.on_message(
-    filters.command(["autopic"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["autopic"], ".") & (filters.me
 )
 async def autopic_zaid(_, m):
     global __XOR
