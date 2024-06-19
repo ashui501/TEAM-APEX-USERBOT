@@ -13,7 +13,7 @@ FIRST_TIME = True
 DIM = [(100, 200), (1280, 200), (1280, 1600), (100, 1600)]
 
 from Barath import SUDO_USER
-from Zaid.helper.basic import eor
+from Barath.helpers.basic import eor
 
 async def _autopic(_, delay):
     global FIRST_TIME
