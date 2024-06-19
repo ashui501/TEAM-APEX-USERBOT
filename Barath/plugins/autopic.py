@@ -41,7 +41,7 @@ async def _autopic(_, delay):
             Path(photo).unlink()
 
 
-@Client.on_message(
+@Client.on_message()
     filters.command(["autopic"], ".") & (filters.me)
 async def autopic_Barath(_, m):
     global __XOR
