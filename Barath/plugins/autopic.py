@@ -42,7 +42,7 @@ async def _autopic(_, delay):
 
 
 @Client.on_message()
-    filters.command(["autopic"]( ".") & (filters.me)
+    filters.command(["autopic"] ".") & (filters.me)
 async def autopic_Barath(_, m):
     global __XOR
     arc = await eor(m, "...")
