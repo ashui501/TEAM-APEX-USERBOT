@@ -7,11 +7,6 @@ from shutil import copyfile
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import filters, Client
 
-from Zaid import SUDO_USER
-from Zaid.helper.basic import eor
-from Zaid.modules.help import add_command_help
-
-
 __XOR = []
 FIRST_TIME = True
 DIM = [(100, 200), (1280, 200), (1280, 1600), (100, 1600)]
@@ -47,9 +42,8 @@ async def _autopic(_, delay):
 
 
 @Client.on_message(
-    filters.command(["autopic"], ".") & (filters.me
-)
-async def autopic_zaid(_, m):
+    filters.command(["autopic"], ".") & (filters.me)
+async def autopic_Barath(_, m):
     global __XOR
     arc = await eor(m, "...")
     if bool(__XOR):
@@ -62,9 +56,3 @@ async def autopic_zaid(_, m):
         __XOR.append(task)
         t = "`Started Autopic.`"
     await arc.edit_text(t)
-
-
-add_command_help(
-    "Autopic",
-    [[".autopic", "Change your DP every 5 minute. \nRun .autopic again to stop it."]],
-)
