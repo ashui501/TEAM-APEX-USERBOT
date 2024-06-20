@@ -13,7 +13,7 @@ from Barath.helpers.PyroHelpers import ReplyCheck
 
 
 flood = {}
-profile_photo = "cache/nk.jpg"
+profile_photo = "cache/profile.jpg"
 
 
 async def extract_userid(message, text: str):
@@ -97,7 +97,7 @@ async def unblock_user_func(client: Client, message: Message):
     await message.edit(f"**Successfully Unblocked Master** {umention}")
 
 @Client.on_message(
-    filters.command(["block"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["block"], ".") & (filters.me)
 )
 async def block_user_func(client: Client, message: Message):
     user_id = await extract_user(message)
@@ -114,7 +114,7 @@ async def block_user_func(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["setname"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["setname"], ".") & (filters.me)
 )
 async def setname(client: Client, message: Message):
     tex = await message.reply_text("`Processing . . .`")
@@ -135,7 +135,7 @@ async def setname(client: Client, message: Message):
         )
 
 @Client.on_message(
-    filters.command(["setbio"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["setbio"], ".") & (filters.me)
 )
 async def set_bio(client: Client, message: Message):
     tex = await message.edit_text("`Processing . . .`")
@@ -153,7 +153,7 @@ async def set_bio(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["setpfp"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["setpfp"], ".") & (filters.me)
 )
 async def set_pfp(client: Client, message: Message):
     replied = message.reply_to_message
@@ -179,7 +179,7 @@ async def set_pfp(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["vpfp"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["vpfp"], ".") & (filters.me)
 )
 async def view_pfp(client: Client, message: Message):
     user_id = await extract_user(message)
