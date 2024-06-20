@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.enums import ChatType
 from pyrogram.types import Message
 
-from Barath.helper.PyroHelpers import ReplyCheck
+from Barath.helpers.PyroHelpers import ReplyCheck
 
 
 @Client.on_message(filters.command(["whois", "info"], ".") & filters.me)
