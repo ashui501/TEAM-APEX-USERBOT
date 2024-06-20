@@ -1,7 +1,6 @@
 from pyrogram import Client, enums, filters 
 from pyrogram.types import Message 
 from config import LOG_GROUP
-from Barath.modules.help import add_command_help
 log = []
 
 
