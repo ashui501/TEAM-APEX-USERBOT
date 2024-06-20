@@ -9,7 +9,7 @@ from time import time
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 
-from Zaid.helper.PyroHelpers import ReplyCheck
+from Barath.helpers.PyroHelpers import ReplyCheck
 
 
 flood = {}
