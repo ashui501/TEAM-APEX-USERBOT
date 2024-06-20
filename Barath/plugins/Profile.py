@@ -81,7 +81,7 @@ async def extract_user(message):
     return (await extract_user_and_reason(message))[0]
 
 @Client.on_message(
-    filters.command(["unblock"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["unblock"], ".") & (filters.me)
 )
 async def unblock_user_func(client: Client, message: Message):
     user_id = await extract_user(message)
