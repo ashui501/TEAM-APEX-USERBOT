@@ -7,14 +7,12 @@
 import os
 import time
 import asyncio
-from Barath import bot
-from Barath import version 
+from Barath import bot 
 from math import ceil
 import json
 import random
 import re
 import io
-from platform import python_version, uname
 @bot.on(admin_cmd(pattern="wish ?(.*)"))
 async def Barath(event):
     LEGENDX = event.pattern_match.group(1)
