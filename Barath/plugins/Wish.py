@@ -13,6 +13,13 @@ import json
 import random
 import re
 import io
+from pyrogram import Client, filters 
+
+@Client.on_message(filters.command("wish", prefixes='.')) 
+async def wish_handler(client, message):  # Define your handler function
+    # ... your logic for handling wishes ... 
+
+# ... (rest of your code) ... 
 @bot.on(admin_cmd(pattern="wish ?(.*)"))
 async def Barath(event):
     LEGENDX = event.pattern_match.group(1)
