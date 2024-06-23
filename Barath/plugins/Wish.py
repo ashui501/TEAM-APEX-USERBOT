@@ -8,7 +8,7 @@ import os
 import time
 import asyncio
 from Barath import bot
-from pyrogram import version
+from Barath import version 
 from math import ceil
 import json
 import random
