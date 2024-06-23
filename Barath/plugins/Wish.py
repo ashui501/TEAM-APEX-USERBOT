@@ -7,7 +7,6 @@
 import os
 import time
 import asyncio
-from pyrogram import events
 from userbot import CMD_HELP
 from userbot import bot
 from pyrogram import version
