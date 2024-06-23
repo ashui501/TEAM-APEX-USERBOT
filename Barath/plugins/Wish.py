@@ -7,8 +7,7 @@
 import os
 import time
 import asyncio
-from userbot import CMD_HELP
-from userbot import bot
+from Barath import bot
 from pyrogram import version
 from math import ceil
 import json
@@ -31,11 +30,3 @@ async def Barath(event):
             result = f"🦋 Yᴏᴜʀ ᴡɪsʜ ʜᴀs ʙᴇᴇɴ ᴄᴀsᴛᴇᴅ 🦋\
                   \n\n🔥𝙲𝙷𝙰𝙽𝙲𝙴 𝙾𝙵 𝚂𝚄𝙲𝙲𝙴𝚂𝚂 : {PROBOY}%"
     await edit_or_reply(event, reslt)
-
-CMD_HELP.update(
-    {
-        "wish": "**Plugin : **`wish`\
-    \n\n**Syntax : **`.wish <your wish>`\
-    \n**Function : **wish plug-in like .wish i am pro"
-    }
-)
