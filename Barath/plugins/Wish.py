@@ -15,8 +15,7 @@ import re
 import io
 from pyrogram import Client, filters 
 
-@Client.on_message(filters.command("wish", prefixes='.')) 
-async def wish_handler(client, message):  # Define your handler function
+@Client.on_message(filters.command(["wish"], ".") & filters.me)  # Define your handler function
     # ... your logic for handling wishes ... 
 
 # ... (rest of your code) ... 
