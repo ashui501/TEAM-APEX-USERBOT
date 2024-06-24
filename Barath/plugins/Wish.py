@@ -19,7 +19,8 @@ from pyrogram import Client, filters
     # ... your logic for handling wishes ... 
 
 # ... (rest of your code) ... 
-@bot.on(admin_cmd(pattern="wish ?(.*)"))
+@Client.on_message(filters.command(["wish"], ".") & filters.me)  # Define your handler function
+    # ... your logic for handling wishes ... 
 async def Barath(event):
     LEGENDX = event.pattern_match.group(1)
     PROBOY = random.randint(0, 100)
