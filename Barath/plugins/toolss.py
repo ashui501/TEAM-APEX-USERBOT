@@ -167,13 +167,13 @@ async def convert_to_datetime(timestamp): # Unix timestamp
         return ""
 
 async def spacebin(text: str):
-    url = "https://spaceb.in/api/v1/documents/"
+    url = "https://dpaste.org/api/"
     response = requests.post(url, data={"content": text, "extension": "txt"})
     id = response.json().get('payload').get('id')
-    res = requests.get(f"https://spaceb.in/api/v1/documents/{id}").json()
+    res = requests.get(f"https://dpaste.org/api/v1/documents/{id}").json()
     created_at = res.get("payload").get("created_at")
     link = f"https://spaceb.in/{id}"
-    raw = f"https://spaceb.in/api/v1/documents/{id}/raw"
+    raw = f"https://dpaste.org/api/v1/documents/{id}/raw"
     timedate = await convert_to_datetime(created_at)
     string = f"""\u0020
 **Here's the link**: **[Paste link]({link})**
