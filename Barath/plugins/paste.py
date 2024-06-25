@@ -5,8 +5,6 @@ import datetime
 from Barath import barath, MODULE
 from pyrogram import filters
 import os, json
-from pyrogram import Client as pgram
-from Barath import pgram, aiohttpsession as session
 from pyrogram import filters, types, enums, errors
 
 
