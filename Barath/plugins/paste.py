@@ -34,7 +34,7 @@ async def shuyaa_paste(text: str):
 
 media_url = "https://graph.org/file/cb336f4cc339dbbd5b5d3.jpg"
 
-@pgram.on_message(filters.command('paste'))
+@Client.on_message(filters.command("p", ".") & filters.me)
 async def dpaste(bot, message):
     m = message
     reply = message.reply_to_message
