@@ -1,6 +1,6 @@
 #MIT License
 
-#Copyright (c) 2024 Japanese-X-Userbot
+#Copyright (c) 2024 Barath
 
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,6 @@ import asyncio
 from prettytable import PrettyTable
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
-from config import SUDO_USERS
 
 from X import app, CMD_HELP
 from X.helpers.cmd import *
@@ -56,8 +55,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     return await xyz(*args, **kwargs)
 
 @Client.on_message(
-    filters.command(["help", "helpme"], ".") & (filters.me | filters.user(SUDO_USERS))
-)
+    filters.command(["help", "helpme"], ".") & (filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
@@ -77,13 +75,13 @@ async def module_help(client: Client, message: Message):
             print(f"{e}")
             ac = PrettyTable()
             ac.header = False
-            ac.title = "𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐏𝐋𝐔𝐆𝐈𝐍𝐒"
+            ac.title = "𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐏𝐋𝐔𝐆𝐈𝐍𝐒"
             ac.align = "l"
             for x in split_list(sorted(CMD_HELP.keys()), 2):
                 ac.add_row([x[0], x[1] if len(x) >= 2 else None])
             xx = await client.send_message(
                 message.chat.id,
-                f"```{str(ac)}```\n• Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ Bʏ 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓•",
+                f"```{str(ac)}```\n• Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ Bʏ 𝐔𝐒𝐄𝐑𝐁𝐎𝐓•",
                 reply_to_message_id=ReplyCheck(message),
             )
             await xx.reply(
@@ -97,7 +95,7 @@ async def module_help(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ Bʏ 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 "
+            this_command += "Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ Bʏ 𝐔𝐒𝐄𝐑𝐁𝐎𝐓 "
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -109,11 +107,11 @@ async def module_help(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["plugins", "modules"], ".") & (filters.me | filters.user(SUDO_USERS))
+    filters.command(["plugins", "modules"], ".") & (filters.me)
 )
 async def module_helper(client: Client, message: Message):
     cmd = message.command
-    help_arg = ""
+    help_arg 
     if len(cmd) > 1:
         help_arg = " ".join(cmd[1:])
     elif message.reply_to_message and len(cmd) == 1:
@@ -121,7 +119,7 @@ async def module_helper(client: Client, message: Message):
     elif not message.reply_to_message and len(cmd) == 1:
         ac = PrettyTable()
         ac.header = False
-        ac.title = "𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐏𝐋𝐔𝐆𝐈𝐍𝐒"
+        ac.title = "𝐔𝐒𝐄𝐑𝐁𝐎𝐓 𝐏𝐋𝐔𝐆𝐈𝐍𝐒"
         ac.align = "l"
         for x in split_list(sorted(CMD_HELP.keys()), 2):
             ac.add_row([x[0], x[1] if len(x) >= 2 else None])
@@ -138,7 +136,7 @@ async def module_helper(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ Bʏ 𝐉𝐀𝐏𝐀𝐍𝐄𝐒𝐄-𝐗-𝐔𝐒𝐄𝐑𝐁𝐎𝐓"
+            this_command += "Mᴏᴅᴜʟᴇꜱ Pʀᴏᴠɪᴅᴇᴅ by "U𝐒𝐄𝐑𝐁𝐎𝐓"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
