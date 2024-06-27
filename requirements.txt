@@ -24,4 +24,4 @@ aiofiles
 aiohttp
 httpx
 httpx[http2]
-heroku run pip install prettytable 
+prettytable 
