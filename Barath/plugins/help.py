@@ -40,7 +40,7 @@ from prettytable import PrettyTable
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
-from Barath import app, CMD_HELP
+from Barath import barath, CMD_HELP
 from Barath.helpers.cmd import *
 from Barath.helpers.PyroHelpers import ReplyCheck
 from Barath.helpers.utility import split_list
