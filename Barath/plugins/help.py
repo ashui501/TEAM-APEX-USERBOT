@@ -40,10 +40,10 @@ from prettytable import PrettyTable
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
-from X import app, CMD_HELP
-from X.helpers.cmd import *
-from X.helpers.PyroHelpers import ReplyCheck
-from X.helpers.utility import split_list
+from Barath import app, CMD_HELP
+from Barath.helpers.cmd import *
+from Barath.helpers.PyroHelpers import ReplyCheck
+from Barath.helpers.utility import split_list
 
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
