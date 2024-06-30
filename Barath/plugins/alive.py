@@ -36,7 +36,7 @@ async def alive():
 
 <b>ᴜꜱᴇʀʙᴏᴛ</b> {user_hyperlink}
 
-<b>Source: <a href='{SOURCE}'>LOVELYX</a></b>"""
+<b>Source: <a href='{SOURCE}'>TEAM-X-APEX</a></b>"""
 
 
     return ALIVE_TEXT, photo_url
