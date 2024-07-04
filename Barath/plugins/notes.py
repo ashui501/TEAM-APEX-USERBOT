@@ -1,8 +1,8 @@
 from pyrogram import filters, Client
 
-from TheGodfather import CMD_HELP
-from TheGodfather.helpers.pyrohelper import get_arg
-import TheGodfather.database.notesdb as db
+from Barath import CMD_HELP
+from Barath.helpers.pyrohelper import get_arg
+import Barath.database.notesdb as db
 from config import PREFIX, LOG_CHAT
 
 CMD_HELP.update(
