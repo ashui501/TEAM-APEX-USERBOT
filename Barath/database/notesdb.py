@@ -1,7 +1,7 @@
 from pyrogram.filters import chat
-from TheGodfather.database import cli
+from Barath.database import cli
 
-collection = cli["TGN"]["notes"]
+collection = cli["Barath"]["notes"]
 
 
 async def save_note(note_name, note_id):
