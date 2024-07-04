@@ -1,5 +1,5 @@
 from pyrogram.filters import chat
-from TheGodfather.database import cli
+from Barath.Barath_db import cli
 
 collection = cli["TGN"]["notes"]
 
