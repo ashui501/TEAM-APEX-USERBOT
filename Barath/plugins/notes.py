@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 
 from Barath import CMD_HELP
 from Barath.helpers.pyrohelper import get_arg
-import Barath.database.notesdb as db
+import Barath.Barath_db.notesdb as db
 from config import PREFIX, LOG_CHAT
 
 CMD_HELP.update(
