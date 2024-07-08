@@ -1,4 +1,5 @@
 import asyncio
+import Barath
 #Credit To @senku_ishigamiii/@uzumaki_naruto_xd
 @Barath.on_message(filters.command("chi", prefixes=HANDLER) & filters.me)
 async def naruto(ult):
