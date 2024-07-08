@@ -1,6 +1,6 @@
 import asyncio
 #Credit To @senku_ishigamiii/@uzumaki_naruto_xd
-
+@barath.on_message(filters.command("chi", prefixes=HANDLER) & filters.me)
 async def naruto(ult):
 	await ult.edit("Hello")
 	await asyncio.sleep(1)
