@@ -1,5 +1,6 @@
 import os
-   
+from os import getenv
+
 PREFIXES = ['!', '/', '$'] 
    
 OWNER_ID = os.getenv("OWNER_ID",1238234357)
