@@ -32,7 +32,8 @@
 import aiohttp
 from pyrogram import filters, Client
 from pyrogram.types import Message
-from config import OWNER_ID
+from Barath import barath, MODULE
+from config import HANDLER,  OWNER_ID
 
 
 @barath.on_message(filters.command("ginfo", prefixes=HANDLER) & filters.me)
