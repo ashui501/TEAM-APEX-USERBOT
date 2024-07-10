@@ -23,12 +23,12 @@
 
 import random
 from pyrogram import Client, filters
-Barath import barath
+pyrogram.types import Message
+from Barath import barath, MODULE
+from config import HANDLER,  OWNER_ID
 
 
-@Client.on_message(
-    filters.command(["coding"], ".") & (filters.me | filters.user(SUDO_USERS))
-
+@barath.on_message(filters.command("cd", prefixes=HANDLER) & filters.me)
 async def coding(client, message):
     args = message.text.split(" ")[1:]
     codingdata = [
