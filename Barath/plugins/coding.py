@@ -42,10 +42,4 @@ async def coding(client, message):
     ]
     coding_url = random.choice(codingdata)
     await message.reply_photo(coding_url)
-
-add_command_help(
-    "•─╼⃝𖠁 Cᴏᴅɪɴɢ",
-    [
-       ["coding", "Gɪᴠᴇ random Cᴏᴅɪɴɢ pic."],
-        ],
-)
+    
