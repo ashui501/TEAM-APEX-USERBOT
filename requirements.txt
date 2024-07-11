@@ -26,3 +26,6 @@ aiohttp
 httpx
 httpx[http2]
 prettytable 
+google-search==1.1.1
+google==3.0.0
+googlesearch-python== 1.2.4
