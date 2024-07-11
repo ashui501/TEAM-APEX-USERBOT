@@ -40,8 +40,9 @@ from bs4 import BeautifulSoup
 from googlesearch import search
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from Barath import barath, MODULE
+from config import HANDLER,  OWNER_ID
 
-from config import CMD_HANDLER,OWNER_ID
 from Barath.helpers.basic import edit_or_reply
 
 
@@ -65,10 +66,8 @@ def googlesearch(query):
         co = co + 1
     return returnquery
 
+@barath.on_message(filters.command("ggl", prefixes=HANDLER) & filters.me)
 
-@Client.on_message(
-    filters.command(["ggl"], ".") & (filters.me)
-)
 async def gs(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     msg_txt = message.text
