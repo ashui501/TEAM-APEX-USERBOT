@@ -67,7 +67,7 @@ def googlesearch(query):
 
 
 @Client.on_message(
-    filters.command(["google"], ".") & (filters.me | filters.user(SUDO_USERS))
+    filters.command(["ggl"], ".") & (filters.me)
 )
 async def gs(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
@@ -98,14 +98,3 @@ async def gs(client: Client, message: Message):
             + f"[{str(presenttitle)}]({str(presenturl)})\n{str(presentmeta)}\n\n"
         )
     await Man.edit(returnmsg)
-
-
-add_command_help(
-    "•─╼⃝𖠁 ɢᴏᴏɢʟᴇ",
-    [
-        [
-            "google",
-            "Fᴇᴀᴛᴄʜ Dᴇᴛᴀɪʟꜱ ᴏɴ Gᴏᴏɢʟᴇ.",
-        ],
-    ],
-) 
