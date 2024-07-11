@@ -105,9 +105,8 @@ async def font_ubot(client: Client, message: Message):
         return await message.reply("Reply Text And Fill In Font Name!!!")
 
 
-@Client.on_message(
-    filters.command(["lf", "listfont"], ".") & (filters.me | filters.user(SUDO_USERS))
-)
+
+@barath.on_message(filters.command("listfont", prefixes=HANDLER) & filters.me)
 async def fonts(client: Client, message: Message):
     await message.reply(
         "<b>ᴅᴀғᴛᴀʀ ғᴏɴᴛs</b>\n\n"
