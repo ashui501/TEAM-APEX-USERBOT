@@ -33,7 +33,7 @@ def get_images(prompt, l):
     return [result["imageUrl"] for result in data["results"]]
 
 
-@barath.on_message(filters.command("ps", prefixes=HANDLER) & filters.me)
+@barath.on_message(filters.command("pinterest", prefixes=HANDLER) & filters.me)
 
 def send_images(client, message):
     command = message.text.split(maxsplit=2)
