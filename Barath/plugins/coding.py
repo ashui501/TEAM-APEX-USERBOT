@@ -1,6 +1,6 @@
 #MIT License
 
-#Copyright (c) 2024 Japanese-X-Userbot
+#Copyright (c) 2024 Team-Apex-X-Userbot
 
 #Permission is hereby granted, free of charge, to any person obtaining a copy
 #of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
 
 import random
 from pyrogram import Client, filters
-pyrogram.types import Message
 from Barath import barath, MODULE
 from config import HANDLER,  OWNER_ID
 
