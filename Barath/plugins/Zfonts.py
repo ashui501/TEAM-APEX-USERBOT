@@ -30,8 +30,10 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from Barath import *
-from config import CMD_HANDLER
 from Barath.helpers.tools import get_arg
+from Barath import barath, MODULE
+from config import HANDLER,  OWNER_ID
+
 
 arguments = [
     "smallcap",
@@ -74,9 +76,8 @@ def gen_font(text, new_font):
             text = text.replace(q, new)
     return text
 
-@Client.on_message(
-    filters.command(["font"], ".") & (filters.me | filters.user(SUDO_USERS))
-)
+@barath.on_message(filters.command("fonts", prefixes=HANDLER) & filters.me)
+
 async def font_ubot(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
         font = get_arg(message)
