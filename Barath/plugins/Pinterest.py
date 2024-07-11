@@ -22,8 +22,8 @@
 
 import requests
 from pyrogram import Client, filters
-from config import OWNER_ID
-from config import HANDLER 
+from Barath import barath, MODULE
+from config import HANDLER,  OWNER_ID
 
 api_url = "https://pinteresimage.nepcoderdevs.workers.dev/"
 
@@ -33,7 +33,8 @@ def get_images(prompt, l):
     return [result["imageUrl"] for result in data["results"]]
 
 
-@barath.on_message(filters.command(["pinterest"], ".") & (filters.me)
+@barath.on_message(filters.command("ps", prefixes=HANDLER) & filters.me)
+
 def send_images(client, message):
     command = message.text.split(maxsplit=2)
     if len(command) < 3:
