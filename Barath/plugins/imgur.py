@@ -4,7 +4,8 @@ import base64
 import requests
 from Barath import barath
 
-@barath.on_message(filters.command("imgur", prefixes=HANDLER) & filters.user('me'))
+
+@barath.on_message(filters.command("imgur", prefixes=HANDLER) & filters.me
 async def imgur(_, message):
     msg = await message.reply_text("`Starting upload...`")
     if message.reply_to_message and message.reply_to_message.photo:
