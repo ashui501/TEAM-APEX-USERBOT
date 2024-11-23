@@ -3,6 +3,7 @@ from pyrogram import *
 import base64
 import requests
 from Barath import barath
+from config import HANDLER
 
 
 @barath.on_message(filters.command("imgur", prefixes=HANDLER) & filters.me)
