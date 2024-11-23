@@ -1,6 +1,7 @@
 from Barath import *
 from pyrogram import *
 from Barath import barath
+from config import HANDLER
 
 @barath.on_message(filters.command("repo", prefixes=HANDLER) & filters.user('me'))
 async def repo(_, message):
