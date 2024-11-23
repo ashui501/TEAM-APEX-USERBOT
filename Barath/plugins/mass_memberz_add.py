@@ -1,3 +1,6 @@
+#MADE_BY_OTAZUKI_X_AKIRA
+#IF U USE THIS COMMAND THERE ARE 60% OF UR ACCOUNT GETTING BANNED 🚫 
+
 from config import HANDLER
 from config import OWNER_ID
 from pyrogram import filters
